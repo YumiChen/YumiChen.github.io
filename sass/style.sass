@@ -1,0 +1,214 @@
+*
+  // border: solid 1px
+  position: relative
+  color: rgba(255,255,255,0.7)
+  @extend %noSelect
+  font-family: Overpass
+  
+html,body
+  margin: 0
+  height: 100vh
+  overflow: hidden
+  background-color: rgb(89, 235, 249)
+
+.uploadUI
+  z-index: 6
+  font-size: 1.8em
+  position: absolute
+  left: 50%
+  top: 50%    
+  transform: translate(-50%,-50%)
+  line-height: 0.8em
+  text-align: center
+  & h1
+    font-family: Permanent Marker
+    font-size: 2.5em
+  & p
+    line-height: 0.2em
+  & p:nth-child(3)
+    font-size: 0.85em
+    font-style: italic
+    line-height: 0.2em
+  & p:nth-child(4)
+    font-size: 0.73em
+    font-style: italic
+    line-height: 0.3em
+  & #sound
+    opacity: 0
+  & input
+    margin-left: 10%
+  
+.bars
+  position: absolute
+  z-index: 3
+  right: 0vw
+
+/*---settings for preparation---*/
+.hideUploadUI
+  animation: inputFade 1s 1
+  animation-fill-mode: forwards
+
+@keyframes inputFade
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+  
+.prepare
+  position: absolute
+  width: 100vw
+  height: 70vh
+  display: none
+  z-index: 6
+  & span
+    color: #fff
+    font-size: 10em
+    font-style: italic
+    position: absolute
+    top: 50%
+    left: 100%
+    animation: prepareFade 1s 1
+    animation-fill-mode: forwards
+  & .three
+  & .two
+    animation-delay: 1s
+  & .one
+    animation-delay: 2s
+  & .go
+    animation-delay: 3s
+    
+@keyframes prepareFade
+  0%
+    top: 50%
+    left: 100%
+  70%
+    top: 50%
+    left: 50%
+    transform: translate(-50%)
+  100%
+    top: 50%
+    left: -80%
+    transform: translate(0%)
+
+/*---setting for gameUI----*/
+.gameUI
+  display: none
+  width: 100vw
+  height: 100vh
+  position: absolute
+  opacity: 0
+  transition: all 0.7s
+  z-index: 7
+  animation: gameUIEnter 1s 1 forwards
+  & .audioInfo
+    position: absolute
+    z-index: 5
+    margin: 1em
+    cursor: pointer
+    font-size: 1.1em
+    font-weight: 500
+    // &:hover
+    //   color: blue
+    //   &::after
+    //     border-color: blue
+    &::after
+      content: ""
+      height: 0
+      width: 25vw
+      position: absolute
+      border-bottom: solid 2px white 
+    // &:active
+    //   .pause
+    //     display: block
+    & i
+      margin: 0.1em
+      margin-left: 0.2em
+      font-size: 1.1em
+    & .title
+      width: 15vw
+      overflow: hidden
+      display: inline-block
+      vertical-align: top
+      margin-left: 0.2em
+      & span
+        animation: title 7s linear infinite
+        white-space: nowrap
+
+  // & .comment
+  //   font-family: Permanent Marker
+  //   font-size: 1.3em
+  // & #score
+  //   font-size: 1.6em
+  //   margin-bottom: 0.3em
+
+@keyframes title
+  from
+    margin-left: 15vw
+  to
+    margin-left: -(15vw*5)
+    
+.box
+  & p
+    color: #fff
+
+.hideGameUI
+  animation: inputFade 1s 1
+  animation-fill-mode: forwards
+  
+@keyframes gameUIEnter
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+/*---Setting for result UI---*/
+.resultUI
+  opacity: 0
+  width: 30vw
+  border-style: dashed solid dashed solid
+  border-width: 3px 17px
+  border-radius: 0 1em 0
+  position: absolute
+  padding: 1.2em
+  font-size: 1.5em
+  line-height: 1.3em
+  top: 50%
+  left: 100%
+  transform: translate(-50%,-50%)
+  text-align: center
+  z-index: 6
+  & .result
+    display: inline-block
+    margin-left: 0.5em
+    & .finalScore, .combos
+      // text-decoration: underline
+      font-style: italic
+      color: orange
+      font-family: Permanent Marker
+  & .level
+    display: inline-block
+    // height: 30vh
+    font-size: 10em
+    font-family: Permanent Marker
+    color: yellow
+  & .replay
+    cursor: pointer
+    margin-top: 0.3em
+    font-family: Permanent Marker
+    font-size: 1.7em
+    &:hover
+      color: orange
+    
+.resultEnter
+  animation: resultEnter 1s 1
+  animation-fill-mode: forwards
+  opacity: 1
+@keyframes resultEnter
+  0%
+    top: 50%
+    left: 130vw
+    transform: translate(-50%,-50%)
+  100%
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)

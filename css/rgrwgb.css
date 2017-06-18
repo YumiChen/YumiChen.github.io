@@ -1,0 +1,6 @@
+// entering animation for 3d
+@keyframes threeEnter
+  0%
+    opacity: 0
+  100%
+    opacity: 0.8
