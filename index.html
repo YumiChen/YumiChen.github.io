@@ -4,10 +4,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>MusicGame</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <title>CodePen - A Pen by  Yumi Chen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+  
+  
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Overpass|Permanent+Marker|Comfortaa'>
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
@@ -307,7 +309,7 @@ html, body {
   font-style: italic;
   line-height: 0.2em;
 }
-.uploadUI p:nth-child(4) {
+.uploadUI p:nth-child(4), .uploadUI p:nth-child(5) {
   font-size: 0.73em;
   font-style: italic;
   line-height: 0.3em;
@@ -454,7 +456,7 @@ html, body {
 .resultUI {
   opacity: 0;
   width: 30vw;
-  border-style: dashed solid dashed solid;
+  border-style: dotted solid dotted solid;
   border-width: 3px 17px;
   border-radius: 0 1em 0;
   position: absolute;
@@ -469,6 +471,7 @@ html, body {
 }
 .resultUI .result {
   display: inline-block;
+  width: 100%;
   margin-left: 0.5em;
 }
 .resultUI .result .finalScore, .resultUI .result .combos {
@@ -513,20 +516,21 @@ html, body {
 
     </style>
 
-
-
-
-
+  
+  
+  
+  
 </head>
 
 <body translate="no" >
 
-
+  
 <div class="uploadUI">
   <h1>Yeahhhhhhhh</h1>
   <p>= Upload an audio to start! =
     <p>## mp3, ogg, wav files supported ##</p>
     <p># Modern bowser suggested #</p>
+    <p># Strong beat music is highly recommended #</p>
   </p>
   <input type="file" id="input"/>
   <audio id="sound" controls="controls"></audio>
@@ -551,7 +555,7 @@ html, body {
   <div class="result">You've got <span class="finalScore">111000 </span> scores!<br/>And <span class="combos">33 </span> combos!</div>
   <!--.replay Play again?-->
 </div>
-
+  
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
 
     <script>
@@ -1055,7 +1059,7 @@ function giveScore(val) {
     comment: '' },
       percentage,
       check;
-  // 誤差率
+  // »~®t²v
   check = Math.abs(val / arrowLength - 1);
   console.log(check);
 
@@ -1143,7 +1147,7 @@ function triggerEvent(element, type, keycode) {
 /*
 1. keydown event
 2. comment
-3.判定
+3.§P©w
 */
 
 // remove class in case of error
@@ -1524,8 +1528,9 @@ function handleClass(dom, className1, className2) {
 }
   </script>
 
-
-
+  
+  
 
 </body>
 </html>
+ 
